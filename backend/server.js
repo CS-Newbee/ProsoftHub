@@ -9,8 +9,6 @@ import memberRoutes from './routes/MemberRoutes.js';
 dotenv.config();
 
 // MySQL Connection
-import mysql from "mysql2";
-
 export const db = mysql.createConnection(process.env.MYSQL_URL);
 
 db.connect((err) => {
