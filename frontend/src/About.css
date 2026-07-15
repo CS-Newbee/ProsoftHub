@@ -1,0 +1,298 @@
+/* =================== */
+/* ABOUT PAGE STYLING */
+/* =================== */
+
+.about-page {
+  background: linear-gradient(135deg, #e6f2ff, #cce0ff);
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+/* =================== */
+/* INTRODUCTION SECTION */
+/* =================== */
+
+.about-intro {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #00b4d8 0%, #0096c7 50%, #0077b6 100%);
+  border-radius: 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInSlide 1.2s ease-out forwards;
+  font-family: "Algerian", sans-serif;
+}
+
+/* Decorative sliding bar under intro */
+.about-intro .intro-decor {
+  width: 80px;
+  height: 6px;
+  background: #ffd700;
+  border-radius: 3px;
+  margin: 20px auto 0 auto;
+  animation: slideDecor 1.5s ease-out forwards;
+}
+
+/* Heading styles */
+.about-intro h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  animation: fadeIn 1s ease-out forwards;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Highlighted span in paragraph */
+.about-intro p span {
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 0 1px 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Paragraph animation */
+.about-intro p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 850px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+  font-weight: 400;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDecor {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 80px;
+    opacity: 1;
+  }
+}
+
+/* Hover effect */
+.about-intro:hover {
+  box-shadow: 0 15px 40px rgba(0, 180, 216, 0.5);
+  transform: translateY(-3px);
+  transition: all 0.4s ease;
+}
+
+/* =================== */
+/* VISION SECTION STYLING */
+/* =================== */
+
+.vision-section {
+  padding: 70px 20px;
+  background: white;
+  border-radius: 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  box-shadow: 0 10px 30px rgba(0, 119, 182, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-section h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  color: #002b5b;
+}
+
+/* Container holding all rows */
+.vision-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Each row: image left, text right */
+.vision-row {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+  max-width: 900px;
+  width: 100%;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, #e6f7ff, #d4ecff);
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 119, 182, 0.1);
+  transition: all 0.4s ease;
+  border-left: 5px solid #00b4d8;
+}
+
+.vision-row:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 119, 182, 0.2);
+  background: linear-gradient(135deg, #d4ecff, #c2e4ff);
+}
+
+/* Images in each row */
+.vision-row img {
+  width: 300px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+  box-shadow: 0 5px 15px rgba(0, 119, 182, 0.2);
+}
+
+/* Text next to image */
+.vision-row .vision-text {
+  flex: 1;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #003366;
+}
+
+/* Active state for animation */
+.vision-row.active img {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =================== */
+/* VIDEO SECTION STYLING */
+/* =================== */
+
+.video-section {
+  padding: 70px 20px;
+  background: linear-gradient(135deg, #00b4d8 0%, #0096c7 50%, #0077b6 100%);
+  border-radius: 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
+  color: white;
+}
+
+.video-section h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.video-section video {
+  max-width: 900px;
+  width: 90%;
+  max-height: 500px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-section video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* =================== */
+/* TEAM HIERARCHY SECTION STYLING */
+/* =================== */
+
+.team-section {
+  padding: 70px 20px;
+  background: white;
+  border-radius: 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 119, 182, 0.15);
+}
+
+.team-section h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #002b5b;
+}
+
+.team-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.team-image-container img {
+  max-width: 1000px;
+  width: 90%;
+  max-height: 600px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 119, 182, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid #e6f7ff;
+}
+
+.team-image-container img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 119, 182, 0.3);
+}
+
+/* =================== */
+/* RESPONSIVE DESIGN */
+/* =================== */
+
+@media (max-width: 768px) {
+  .about-intro h2,
+  .vision-section h2,
+  .video-section h2,
+  .team-section h2 {
+    font-size: 2rem;
+  }
+
+  .about-intro p {
+    font-size: 1rem;
+  }
+
+  .vision-row {
+    flex-direction: column;
+  }
+
+  .vision-row img {
+    width: 100%;
+    height: auto;
+  }
+}

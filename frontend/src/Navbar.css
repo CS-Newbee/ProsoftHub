@@ -1,0 +1,294 @@
+/* ==========================================
+   NAVBAR CSS - FOR NAVBAR COMPONENT
+   Taller Navbar + Glowing Buttons
+   ========================================== */
+
+/* Navbar Container - TALLER & DARKER */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: navy;
+background: #00162e;
+background: linear-gradient(135deg, #002b5b 0%, #003d73 100%);  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  height: 85px;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(0);
+}
+
+.navbar.scrolled {
+  background: rgba(0, 20, 39, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.6);
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.navbar.visible {
+  transform: translateY(0);
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.navbar .logo-image {
+  width: 50px !important;
+  height: 50px !important;
+  max-width: 50px !important;
+  max-height: 50px !important;
+  min-width: 50px !important;
+  min-height: 50px !important;
+  object-fit: cover !important;
+  border-radius: 10px !important;
+  border: 2px solid white !important;
+  transition: transform 0.3s ease !important;
+}
+
+.navbar .logo:hover .logo-image {
+  transform: scale(1.08);
+}
+
+.navbar .logo h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links li {
+  color: white;
+  background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 13px 30px;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  white-space: nowrap;
+  box-shadow: 0 5px 15px rgba(0, 119, 182, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar .nav-links li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.6s;
+}
+
+.navbar .nav-links li:hover::before {
+  left: 100%;
+}
+
+.navbar .nav-links li:hover {
+  background: linear-gradient(135deg, #023e8a 0%, #0353a4 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(3, 62, 138, 0.7);
+  filter: brightness(1.1);
+}
+
+.navbar .nav-links li:nth-last-child(2) {
+  background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+  color: white;
+}
+
+.navbar .nav-links li:nth-last-child(2):hover {
+  background: linear-gradient(135deg, #023e8a 0%, #0353a4 100%);
+  box-shadow: 0 8px 25px rgba(3, 62, 138, 0.7);
+}
+
+.navbar .nav-links li:last-child {
+  background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.5);
+}
+
+.navbar .nav-links li:last-child:hover {
+  background: linear-gradient(135deg, #0096c7 0%, #48cae4 100%);
+  box-shadow: 0 10px 30px rgba(0, 180, 216, 0.7);
+  filter: brightness(1.15);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 10000;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+@media (max-width: 1200px) {
+  .navbar { padding: 18px 35px; }
+  .navbar .nav-links { gap: 12px; }
+  .navbar .nav-links li { font-size: 0.95rem; padding: 11px 24px; }
+}
+
+@media (max-width: 1024px) {
+  .navbar { padding: 15px 30px; }
+  .navbar .nav-links { gap: 10px; }
+  .navbar .nav-links li { font-size: 0.9rem; padding: 10px 20px; }
+  .navbar .logo h1 { font-size: 1.4rem; }
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 15px 20px; height: 75px; }
+  .hamburger { display: flex; }
+  .navbar .logo h1 { display: none; }
+
+  .navbar .nav-links {
+    position: fixed;
+    top: 75px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 75px);
+    background: linear-gradient(135deg, #001427 0%, #002040 100%);
+    flex-direction: column;
+    gap: 0;
+    padding: 40px 20px;
+    transition: left 0.4s ease;
+    overflow-y: auto;
+    align-items: stretch;
+  }
+
+  .navbar .nav-links.active { left: 0; }
+
+  .navbar .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 18px 20px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    border-radius: 15px;
+  }
+
+  .navbar .nav-links li:nth-last-child(2),
+  .navbar .nav-links li:last-child {
+    margin-top: 20px;
+    padding: 18px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar { padding: 12px 15px; height: 70px; }
+  .navbar .logo-image {
+    width: 45px !important; height: 45px !important;
+    max-width: 45px !important; max-height: 45px !important;
+  }
+  .navbar .nav-links { top: 70px; height: calc(100vh - 70px); padding: 30px 15px; }
+  .navbar .nav-links li { font-size: 1rem; padding: 16px; margin-bottom: 12px; }
+}
+
+html { scroll-behavior: smooth; }
+
+.home-container, .page-container, main { padding-top: 0; }
+
+.navbar img { max-width: 50px !important; max-height: 50px !important; }
+
+.navbar .nav-links li {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.navbar .nav-links li.active-link {
+  background: linear-gradient(135deg, #48cae4 0%, #00b4d8 100%);
+  box-shadow: 0 8px 25px rgba(72, 202, 228, 0.7);
+}
+
+.navbar .logo-image[src=""],
+.navbar .logo-image:not([src]) {
+  display: inline-block;
+  width: 50px; height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 5px 15px rgba(0, 119, 182, 0.4); }
+  50%       { box-shadow: 0 8px 25px rgba(0, 180, 216, 0.6); }
+}
+
+.navbar .nav-links li { animation: pulseGlow 3s ease-in-out infinite; }
+.navbar .nav-links li:hover { animation: none; }
+
+
+/* ==========================================
+   ✅ NEW: Logged-in user — Dashboard & Logout
+   ========================================== */
+
+/* User ka naam / dashboard button */
+.navbar .nav-links .nav-dashboard-btn {
+  background: linear-gradient(135deg, #0a3d6b 0%, #0077b6 100%) !important;
+  color: #90e0ef !important;
+  font-weight: 700;
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.navbar .nav-links .nav-dashboard-btn:hover {
+  background: linear-gradient(135deg, #023e8a 0%, #00b4d8 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 25px rgba(0, 180, 216, 0.6) !important;
+}
+
+/* Logout button — red style */
+.navbar .nav-links .nav-logout-btn {
+  background: linear-gradient(135deg, #7b0000 0%, #c62828 100%) !important;
+  color: #fff !important;
+  font-weight: 800;
+  box-shadow: 0 5px 15px rgba(198, 40, 40, 0.4) !important;
+  animation: none !important;
+}
+
+.navbar .nav-links .nav-logout-btn:hover {
+  background: linear-gradient(135deg, #c62828 0%, #e53935 100%) !important;
+  box-shadow: 0 8px 25px rgba(229, 57, 53, 0.6) !important;
+  transform: translateY(-3px) !important;
+  filter: brightness(1.1) !important;
+}

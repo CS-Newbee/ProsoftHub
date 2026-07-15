@@ -1,0 +1,196 @@
+.signin-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+   overflow: hidden;
+}
+
+.signin-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+.signin-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signin-box {
+  background: rgba(70, 100, 130, 0.5); /* Same as signup */
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 35px 40px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+  width: 380px; /* Same as signup */
+  max-width: 90vw;
+  animation: flipIn 2.2s ease-out; /* Same flip animation */
+   max-height: 90vh;
+}
+
+@keyframes flipIn {
+  0% {
+    transform: perspective(900px) rotateY(-100deg);
+    opacity: 0;
+  }
+  50% {
+    transform: perspective(900px) rotateY(15deg);
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(900px) rotateY(0deg);
+  }
+}
+
+.signin-box h2 {
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.signin-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.signin-box input,
+.signin-box select {
+  padding: 18px 25px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease; box-sizing: border-box; 
+
+}
+
+.signin-box input::placeholder {
+  color: #999;
+}
+
+.signin-box select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 25px center;
+  background-size: 16px;
+  padding-right: 50px;
+}
+
+.signin-box select option {
+  background: white;
+  color: #333;
+}
+
+.signin-box input:focus,
+.signin-box select:focus {
+  background: white;
+  box-shadow: 0 0 15px rgba(100, 180, 255, 0.5);
+  transform: scale(1.02);
+}
+
+.signin-btn {
+  background: linear-gradient(90deg, #00b4d8, #0096c7);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 180, 216, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.signin-btn:hover {
+  background: linear-gradient(90deg, #0096c7, #0077b6);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 180, 216, 0.6);
+}
+
+.signin-btn:active {
+  transform: translateY(-1px);
+}
+
+.signup-link {
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  margin-top: 25px;
+}
+
+.signup-link span {
+  color: #ffa500;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.signup-link span:hover {
+  color: #ffb732;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .signin-box {
+    padding: 40px 30px;
+    width: 90%;
+  }
+
+  .signin-box h2 {
+    font-size: 2rem;
+  }
+
+  .signin-box input,
+  .signin-box select {
+    padding: 15px 20px;
+    font-size: 0.95rem;
+  }
+
+  .signin-btn {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+}
+/* Password wrapper ko flex banayein taake items ek line mein rahein */
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Ye email box jitni width lega */
+  position: relative;
+}
+
+/* Input ko batayein ke wo bachi hui saari jagah le le */
+.password-wrapper input {
+  flex: 1; /* Isse width automatically email box ke barabar ho jayegi */
+  width: 100%;
+}
+
+/* Emoji ki position set karein taake wo box ke andar ya side pe sahi dikhe */
+.emoji {
+  margin-left: 10px; /* Box se thoda door rakhne ke liye */
+  font-size: 1.5rem;
+  cursor: pointer;
+}

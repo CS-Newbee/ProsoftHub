@@ -1,0 +1,181 @@
+/* Animated Gradient Background */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 60px 20px; 
+  min-height: 100vh;
+    
+  /* Animating Background */
+  background: linear-gradient(-45deg, #52ee74, #3cd6e7, #23c3d5, #6d23d5);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism Card Effect */
+/* Naya code (Dark Variant) */
+.form-card {
+  background: rgba(0, 20, 40, 0.8); /* Dark Blue background with transparency */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); /* Darker shadow */
+  width: 100%;
+  max-width: 650px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border */
+  /* Entrance Animation */
+  animation: slideUp 0.8s ease-out;
+}/* Naya code (Dark Variant) */
+/* 1. Card ki styling aur animation */
+.form-card {
+  /* Initial Background (Light colors ka gradient) */
+  background: linear-gradient(-45deg, #ffffff, #f7f7f7, #e0f7fa, #f1f8e9);
+  background-size: 400% 400%; /* Is se animation smooth hogi */
+  animation: cardGradient 10s ease infinite, slideUp 0.8s ease-out;
+  
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 650px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* 2. Naya Animation Rule for Card Colors */
+@keyframes cardGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 3. Padding Fix (Navbar ke liye) */
+.form-container {
+  padding-top: 120px !important; /* Ye zaroor check karlein */
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-header h2 {
+  color: #333;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-header p {
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+  
+}
+
+/* Input Fields Styling */
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+  font-size: 14px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+}
+
+/* Focus Effects */
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+  border-color: #23a6d5;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 10px rgba(35, 166, 213, 0.2);
+  transform: translateY(-2px);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Modern Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  background: linear-gradient(45deg, #23a6d5, #23d5ab);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(35, 213, 171, 0.3);
+}
+
+.submit-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(35, 213, 171, 0.4);
+  filter: brightness(1.1);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Success/Error Messages */
+.alert {
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.alert.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.alert.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  .form-card { padding: 25px; }
+}
