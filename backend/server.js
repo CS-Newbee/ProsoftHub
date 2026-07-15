@@ -19,7 +19,7 @@ export const db = mysql.createConnection({
 
 db.connect((err) => {
   if (err) {
-    console.error("❌ DB Error:", err.message);
+    console.error("❌ DB Error:", err);
     process.exit(1);
   } else {
     console.log("✅ MySQL connected!");
@@ -30,7 +30,7 @@ const app = express();
 
 // ⭐ VERY IMPORTANT: ALLOW FRONTEND
 app.use(cors({
-  origin: 'https://prosoft-hub-qn4o.vercel.app/',
+  origin: 'https://prosoft-hub-qn4o.vercel.app',
   methods: ['GET', 'POST','PUT', 'DELETE'],
   credentials: true
 }));
