@@ -9,6 +9,7 @@ const router = express.Router();
 /* =====================================================
    GET: Fetch all gallery images
 ===================================================== */
+
 router.get('/', (req, res) => {
   const query = 'SELECT * FROM gallery_images ORDER BY id DESC';
 
