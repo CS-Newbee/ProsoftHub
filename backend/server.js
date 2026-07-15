@@ -10,11 +10,11 @@ dotenv.config();
 
 // MySQL Connection
 export const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '$weetDb#0me',
-  database: 'mydatabase',
-  port: 3307
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT
 });
 
 db.connect((err) => {
@@ -30,7 +30,7 @@ const app = express();
 
 // ⭐ VERY IMPORTANT: ALLOW FRONTEND
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://prosoft-hub-qn4o.vercel.app/',
   methods: ['GET', 'POST','PUT', 'DELETE'],
   credentials: true
 }));
