@@ -45,7 +45,7 @@ app.use("/api/events", eventRoutes);
 // 2. Naya Membership Route Register Karein
 app.use('/api/members', memberRoutes); 
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
