@@ -4,8 +4,7 @@ import mysql from 'mysql2';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes.js';
 import eventRoutes from './routes/eventRoutes.js';
-// 1. Naya member route import karein
-import memberRoutes from './routes/memberRoutes.js'; 
+import memberRoutes from './routes/MemberRoutes.js';
 
 dotenv.config();
 
