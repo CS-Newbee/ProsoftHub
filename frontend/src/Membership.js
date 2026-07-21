@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Membership.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://prosofthub-production.up.railway.app';
+
 const Membership = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -33,7 +35,7 @@ const Membership = () => {
     setStatus({ type: '', message: '' });
 
     try {
-      const response = await fetch('http://localhost:5000/api/members/register', {
+      const response = await fetch(`${API_BASE_URL}/api/members/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

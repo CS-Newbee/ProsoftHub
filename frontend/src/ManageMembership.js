@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './ManageMembership.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://prosofthub-production.up.railway.app';
+
 const ManageMembership = () => {
   // Dashboard State
   const [members, setMembers] = useState([]);
@@ -34,7 +36,7 @@ const ManageMembership = () => {
   const fetchMembers = async (status = '', dept = '', year = '', search = '') => {
     setLoading(true);
     try {
-      let url = 'http://localhost:5000/api/members?';
+      let url = `${API_BASE_URL}/api/members?`;
       if (status && status !== 'all') url += `status=${status}&`;
       if (dept) url += `department=${encodeURIComponent(dept)}&`;
       if (year) url += `year=${encodeURIComponent(year)}&`;
@@ -55,7 +57,7 @@ const ManageMembership = () => {
 
   const fetchStats = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/members/stats');
+      const response = await fetch(`${API_BASE_URL}/api/members/stats`);
       const data = await response.json();
 
       if (data.success) {
@@ -73,7 +75,7 @@ const ManageMembership = () => {
   const handleApprove = async (memberId) => {
     setActionLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/members/status/${memberId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/members/status/${memberId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'approved', advisorName: 'Advisor' })
@@ -100,7 +102,7 @@ const ManageMembership = () => {
   const handleReject = async (memberId, reason) => {
     setActionLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/members/status/${memberId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/members/status/${memberId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'rejected', advisorName: 'Advisor', rejectionReason: reason })
@@ -128,7 +130,7 @@ const ManageMembership = () => {
     if (!window.confirm('Are you sure you want to delete this member?')) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/members/${memberId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/members/${memberId}`, {
         method: 'DELETE'
       });
 

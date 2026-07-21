@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './SignUp.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://prosofthub-production.up.railway.app';
+
 function SignUp() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -55,7 +57,7 @@ function SignUp() {
     setLoading(true);
 
     try {
-      await axios.post('http://localhost:5000/api/auth/register', {
+      await axios.post(`${API_BASE_URL}/api/auth/register`, {
         name: formData.name,
         email: formData.email,
         password: formData.password,

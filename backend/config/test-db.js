@@ -5,7 +5,7 @@ console.log('Testing MySQL connection...\n');
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '$weetDb#0me',  // ✅ Naya simple password
+  password: '$weetDb#0me',  // ✅ New password
   database: 'mydatabase',
   port: 3306
 });

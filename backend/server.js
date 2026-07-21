@@ -22,10 +22,23 @@ db.connect((err) => {
 
 const app = express();
 
+const allowedOrigins = [
+  'https://prosoft-hub-qn4o.vercel.app',
+  'http://localhost:3000',
+  'http://localhost:3001',
+  process.env.CORS_ORIGIN,
+].filter(Boolean);
+
 // ⭐ VERY IMPORTANT: ALLOW FRONTEND
 app.use(cors({
-  origin: 'https://prosoft-hub-qn4o.vercel.app',
-  methods: ['GET', 'POST','PUT', 'DELETE'],
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
 }));
 

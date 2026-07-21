@@ -6,7 +6,8 @@ function Events() {
   const [filterStatus, setFilterStatus] = useState("upcoming");
   const [loading, setLoading] = useState(true);
 
-  const API_URL = "http://localhost:5000/api/events";
+  const API_BASE_URL = process.env.REACT_APP_API_URL || "https://prosofthub-production.up.railway.app";
+  const API_URL = `${API_BASE_URL}/api/events`;
 
   const fetchEvents = async () => {
     setLoading(true);
