@@ -28,7 +28,7 @@ function ManageEvents() {
 
   const fetchEvents = async () => {
     try {
-      const res = await fetch(`${API_URL}/advisor/${ADVISOR_ID}`);
+      const res = await fetch(API_URL);
       const data = await res.json();
       setEvents(data);
     } catch (err) {
@@ -215,11 +215,32 @@ function ManageEvents() {
                 <p className="event-description">{event.description}</p>
 
                 <div className="event-actions">
-                  <button onClick={() => handleEdit(event)} className="event-btn btn-edit">✏️ Edit</button>
-                  {event.status === "upcoming" && (
-                    <button onClick={() => handlePostpone(event.id)} className="event-btn btn-postpone">⏸️ Postpone</button>
+                  {Number(event.advisor_id) === Number(ADVISOR_ID) && (
+                    <>
+                      <button
+                        onClick={() => handleEdit(event)}
+                        className="event-btn btn-edit"
+                      >
+                        ✏️ Edit
+                      </button>
+
+                      {event.status === "upcoming" && (
+                        <button
+                          onClick={() => handlePostpone(event.id)}
+                          className="event-btn btn-postpone"
+                        >
+                          ⏸️ Postpone
+                        </button>
+                      )}
+
+                      <button
+                        onClick={() => handleDelete(event.id)}
+                        className="event-btn btn-delete"
+                      >
+                        🗑️ Delete
+                      </button>
+                    </>
                   )}
-                  <button onClick={() => handleDelete(event.id)} className="event-btn btn-delete">🗑️ Delete</button>
                 </div>
               </div>
             </div>
