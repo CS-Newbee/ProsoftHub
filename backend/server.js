@@ -5,7 +5,7 @@ import cors from 'cors';
 import authRoutes from './routes/authRoutes.js';
 import eventRoutes from './routes/eventRoutes.js';
 import memberRoutes from './routes/MemberRoutes.js';
-
+import manageGalleryRoutes from "./routes/ManageGalleryRoutes.js";
 dotenv.config();
 
 // MySQL Connection
@@ -43,7 +43,7 @@ app.use(cors({
 }));
 
 app.use(express.json());
-
+app.use("/api/gallery", manageGalleryRoutes);
 // Existing Routes
 app.use('/api/auth', authRoutes);
 app.use("/api/events", eventRoutes);
