@@ -54,15 +54,15 @@ function SignIn() {
       const msg = err.response?.data?.message;
 
       if (status === 401) {
-        setError('❌ Galat email ya password hai!');
+        setError('❌ wrong email or password!');
       } else if (status === 400) {
-        setError('⚠️ Email aur password dono zaroori hain!');
+        setError('⚠️ Email and password both required!');
       } else if (status === 500) {
-        setError('🔴 Server error! Thori dair baad try karein.');
+        setError('🔴 Server error! try again.');
       } else if (!err.response) {
-        setError('🔌 Server se connection nahi ho raha. Backend chalu hai?');
+        setError('🔌 No connection with Server. Backend ONN?');
       } else {
-        setError(msg || '❌ Login fail! Credentials check karein.');
+        setError(msg || '❌ Login fail! Check Credentials  .');
       }
     } finally {
       setLoading(false);
