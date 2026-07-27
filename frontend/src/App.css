@@ -4,6 +4,8 @@
 
 /* Navbar */
 .navbar {
+  position: relative;
+  z-index: 1;
   background-color: #002b5b;
   color: white;
   display: flex;
@@ -993,7 +995,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000;
+  z-index: 999999;
+  inset: 0;
   animation: fadeIn 0.3s ease-in-out;
   backdrop-filter: blur(10px);
   padding: 20px;
@@ -1021,6 +1024,8 @@
   animation: slideUp 0.4s ease-out;
   margin: auto;
   margin-top: 50px;
+  z-index: 1000000;
+
 }
 
 @keyframes slideUp {
@@ -1034,7 +1039,7 @@
   }
 }
 
-.modal-close {
+.modal-content-close{
   position: absolute;
   top: 20px;
   right: 20px;
@@ -1055,7 +1060,7 @@
   z-index: 10001;
 }
 
-.modal-close:hover {
+.modal-content-close:hover {
   background: #ff4757;
   color: white;
   transform: rotate(90deg);
@@ -1296,36 +1301,26 @@
   }
 }
 /* Mobile Fix for Team Modal */
-@media (max-width:768px){
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
 
-.modal-content{
-    position:relative;
-    overflow-y:auto;
-}
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+  }
 
-.modal-content-close{
-    position:fixed !important;
-    top:18px !important;
-    right:18px !important;
+  .nav-links li {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 
-    width:42px;
-    height:42px;
-
-    border-radius:50%;
-
-    background:#ffffff !important;
-    color:#002b5b !important;
-
-    font-size:28px !important;
-    font-weight:bold;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.25);
-
-    z-index:999999;
-}
-
+  .logo h1 {
+    font-size: 18px;
+  }
 }
