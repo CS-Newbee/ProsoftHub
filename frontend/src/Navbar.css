@@ -43,16 +43,16 @@ background: linear-gradient(135deg, #002b5b 0%, #003d73 100%);  display: flex;
 }
 
 .navbar .logo-image {
-  width: 50px !important;
-  height: 50px !important;
+  width: 50px ;
+  height: 50px ;
   max-width: 50px !important;
   max-height: 50px !important;
   min-width: 50px !important;
   min-height: 50px !important;
-  object-fit: cover !important;
-  border-radius: 10px !important;
-  border: 2px solid white !important;
-  transition: transform 0.3s ease !important;
+  object-fit: cover ;
+  border-radius: 12px ;
+  border: 2px solid white ;
+  transition: transform 0.3s ease ;
 }
 
 .navbar .logo:hover .logo-image {
