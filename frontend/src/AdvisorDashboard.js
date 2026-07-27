@@ -5,15 +5,6 @@ import "./AdvisorDashboard.css";
 
 const AdvisorDashboard = () => {
   const navigate = useNavigate();
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => setSidebarOpen((prev) => !prev);
-  const closeSidebar = () => setSidebarOpen(false);
-
-  const navTo = (path) => {
-    navigate(path);
-    closeSidebar();
-  };
 
   return (
     <div className="adv-page">
