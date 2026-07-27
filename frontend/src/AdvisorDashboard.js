@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AdvisorNavbar from "./AdvisorNavbar";
 import { useNavigate } from "react-router-dom";
 import "./AdvisorDashboard.css";
 
