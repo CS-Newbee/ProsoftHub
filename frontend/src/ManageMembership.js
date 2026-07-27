@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AdvisorNavbar from "./AdvisorNavbar";
 import './ManageMembership.css';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://prosofthub-production.up.railway.app';
@@ -173,6 +174,8 @@ const ManageMembership = () => {
   // ==========================================
 
   return (
+     <>
+    <AdvisorNavbar />
     <div className="dashboard-container">
       {/* Header */}
       <header className="dashboard-header">
@@ -479,6 +482,7 @@ const ManageMembership = () => {
         </div>
       )}
     </div>
+  </>
   );
 };
 
