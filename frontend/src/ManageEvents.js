@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import AdvisorNavbar from "./AdvisorNavbar";
+
 import "./ManageEvents.css";
 
 function ManageEvents() {
@@ -130,6 +132,8 @@ function ManageEvents() {
   const getStatIconClass = (status) => `stat-${status}`;
 
   return (
+       <>
+    <AdvisorNavbar />
     <div className="events-container">
       {/* HEADER */}
       <div className="events-header">
@@ -320,6 +324,7 @@ function ManageEvents() {
         </div>
       )}
     </div>
+   </>
   );
 }
 
