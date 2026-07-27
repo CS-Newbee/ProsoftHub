@@ -6,30 +6,33 @@ import "./AdvisorDashboard.css";
 const AdvisorDashboard = () => {
   const navigate = useNavigate();
 
-return (
-  <div className="adv-page">
+  return (
+    <div className="adv-page">
 
-    <AdvisorNavbar />
+      <AdvisorNavbar />
 
-    {/* Main Content */}
-    <div className="adv-main">
-      <h2>Advisor Dashboard</h2>
-      <p>What would you like to manage?</p>
+      {/* Main Content */}
+      <div className="adv-main">
+        <h2>Advisor Dashboard</h2>
+        <p>What would you like to manage?</p>
 
-      <div className="adv-btns">
-        <button onClick={() => navigate("/advisor-dashboard/events")}>
-          Manage Events
-        </button>
+        <div className="adv-btns">
+          <button onClick={() => navigate("/advisor-dashboard/events")}>
+            Manage Events
+          </button>
 
-        <button onClick={() => navigate("/advisor-dashboard/memberships")}>
-          Manage Membership
-        </button>
+          <button onClick={() => navigate("/advisor-dashboard/memberships")}>
+            Manage Membership
+          </button>
 
-        <button onClick={() => navigate("/advisor-dashboard/gallery")}>
-          Manage Gallery
-        </button>
+          <button onClick={() => navigate("/advisor-dashboard/gallery")}>
+            Manage Gallery
+          </button>
+        </div>
       </div>
-    </div>
 
-  </div>
-);
+    </div>
+  );
+};
+
+export default AdvisorDashboard;
