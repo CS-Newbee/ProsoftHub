@@ -9,15 +9,11 @@ import manageGalleryRoutes from "./routes/ManageGalleryRoutes.js";
 dotenv.config();
 
 // MySQL Connection
-export const db = mysql.createConnection(process.env.MYSQL_URL);
-
-db.connect((err) => {
-  if (err) {
-    console.error("❌ Full DB Error:", err);
-    process.exit(1);
-  }
-
-  console.log("✅ MySQL connected!");
+export const db = mysql.createPool({
+  uri: process.env.MYSQL_URL,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
 });
 
 const app = express();
