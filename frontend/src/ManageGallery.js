@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import AdvisorNavbar from "./AdvisorNavbar";
 import "./ManageGallery.css";
 
 const BACKEND_URL = process.env.REACT_APP_API_URL || "https://prosofthub-production.up.railway.app";
@@ -184,8 +185,11 @@ const ManageGallery = () => {
   };
 
   return (
-    // FIXED BACKGROUND STYLING APPLIED HERE TO MATCH THE ADVISOR DASHBOARD BLUE
-    <div className="manage-gallery" style={{
+     <>
+    <AdvisorNavbar />
+
+    <div
+      className="manage-gallery" style={{
       background: "linear-gradient(135deg, #0f62ac 0%, #002d62 100%)",
       minHeight: "100vh",
       color: "white",
@@ -264,7 +268,8 @@ const ManageGallery = () => {
         Total Images in {selectedCategory}: {gallery[selectedCategory].length}
       </div>
     </div>
-  );
+  </>
+);
 };
 
 export default ManageGallery;
