@@ -239,7 +239,26 @@ const [formMessage, setFormMessage] = useState("");
       {selectedTeam && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-content-close" style={{position: "absolute", right: "20px", top: "10px", fontSize: "30px", background: "none", border: "none", cursor: "pointer", color: "#000"}} onClick={closeModal}>×</button>
+            <button
+  onClick={closeModal}
+  style={{
+    position: "fixed",
+    top: "15px",
+    right: "15px",
+    zIndex: 999999,
+    width: "45px",
+    height: "45px",
+    borderRadius: "50%",
+    border: "none",
+    background: "#fff",
+    color: "#000",
+    fontSize: "28px",
+    cursor: "pointer",
+    boxShadow: "0 4px 15px rgba(0,0,0,.3)"
+  }}
+>
+  ×
+</button>
             <h2 className="modal-title">{selectedTeam.title} Team</h2>
             <div className="team-members-grid">
               {selectedTeam.members.map((member, idx) => (
