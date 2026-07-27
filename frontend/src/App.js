@@ -241,21 +241,6 @@ const [formMessage, setFormMessage] = useState("");
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button
   onClick={closeModal}
-  style={{
-    position: "fixed",
-    top: "15px",
-    right: "15px",
-    zIndex: 999999,
-    width: "45px",
-    height: "45px",
-    borderRadius: "50%",
-    border: "none",
-    background: "#fff",
-    color: "#000",
-    fontSize: "28px",
-    cursor: "pointer",
-    boxShadow: "0 4px 15px rgba(0,0,0,.3)"
-  }}
 >
   ×
 </button>
