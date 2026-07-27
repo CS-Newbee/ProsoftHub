@@ -17,6 +17,13 @@ function App() {
   const navigate = useNavigate();
   const [index, setIndex] = useState(0);
   const [selectedTeam, setSelectedTeam] = useState(null);
+  const [formData, setFormData] = useState({
+  name: "",
+  phone: "",
+  message: "",
+});
+
+const [formMessage, setFormMessage] = useState("");
 
   const scrollToModules = () => {
     const section = document.querySelector(".modules-section");
@@ -275,12 +282,63 @@ function App() {
               <div className="contact-item"><span>📍</span> <span>University Campus, Gujranwala, Punjab, Pakistan</span></div>
             </div>
           </div>
-          <div className="contact-form">
-            <div className="form-group"><label>Your name</label><input type="text" placeholder="Enter your name" /></div>
-            <div className="form-group"><label>Phone Number</label><input type="tel" placeholder="Enter your mobile number" /></div>
-            <div className="form-group"><label>Write your messages here</label><textarea placeholder="Enter your message" rows="5"></textarea></div>
-            <button className="submit-btn">Submit now →</button>
-          </div>
+             <div className="contact-form">
+              <div className="form-group">
+                <label>Your name</label>
+            
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      name: e.target.value,
+                    })
+                  }
+                />
+              </div>
+            
+              <div className="form-group">
+                <label>Phone Number</label>
+            
+                <input
+                  type="tel"
+                  placeholder="Enter your mobile number"
+                  value={formData.phone}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      phone: e.target.value,      })
+                  } />
+              </div>
+            
+              <div className="form-group">
+                <label>Write your message here</label>
+            
+                <textarea
+                  rows="5"
+                  placeholder="Enter your message"
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      message: e.target.value,
+                    })
+                  }/>
+              </div>
+            
+              <button
+                className="submit-btn"
+                onClick={handleSubmit}>Submit Now → </button>
+            
+              {formMessage && (
+                <p  style={{
+                    marginTop: "15px",
+                    color: "green",
+                    fontWeight: "600",
+                  }} >{formMessage}</p>   )}
+            </div>
         </div>
       </div>
       <Footer />
