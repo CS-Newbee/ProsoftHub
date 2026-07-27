@@ -189,12 +189,14 @@ const ManageGallery = () => {
     <AdvisorNavbar />
 
     <div
-      className="manage-gallery" style={{
-      background: "linear-gradient(135deg, #0f62ac 0%, #002d62 100%)",
-      minHeight: "100vh",
-      color: "white",
-      padding: "30px"
-    }}>
+     className="manage-gallery"
+     style={{
+     background: "linear-gradient(135deg, #0f62ac 0%, #002d62 100%)",
+     minHeight: "100vh",
+     color: "white",
+     padding: "90px 30px 30px"
+    }}
+    >
       <h1 style={{ color: "white", marginBottom: "20px" }}>Manage Gallery</h1>
 
       <div className="category-select">
