@@ -1302,26 +1302,3 @@
   }
 }
 /* Mobile Fix for Team Modal */
-@media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-    padding: 15px;
-  }
-
-  .nav-links {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-  .nav-links li {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-
-  .logo h1 {
-    font-size: 18px;
-  }
-}
