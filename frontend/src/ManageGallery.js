@@ -187,16 +187,8 @@ const ManageGallery = () => {
   return (
      <>
     <AdvisorNavbar />
-      <div style={{
-    position: "fixed",
-    top: "20px",
-    left: "20px",
-    width: "50px",
-    height: "50px",
-    background: "red",
-    zIndex: 999999
-    }}>
-  </div>
+      
+
     <div
      className="manage-gallery"
      style={{
