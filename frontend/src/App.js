@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
-import { useNavigate } from 'react-router-dom';
 import "./App.css";
 
 
@@ -136,22 +135,7 @@ const [formMessage, setFormMessage] = useState("");
 
   return (
     <div className="home-container">
-      {/* Navigation Bar */}
-      <nav className="navbar">
-        <div className="logo">
-          <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Prosoft Hub Logo" className="logo-image" />
-          <h1>Prosoft Hub</h1>
-        </div>
-        <ul className="nav-links">
-          <li onClick={() => navigate('/')}>Home</li>
-          <li onClick={() => navigate('/about')}>About</li>  
-          <li onClick={() => navigate('/events')}>Events</li>
-          <li onClick={() => navigate('/membership')}>Membership</li>
-          <li onClick={() => navigate('/gallery')}>Gallery</li>
-          <li onClick={() => navigate('/signin')}>Sign In</li>
-          <li onClick={() => navigate('/signup')}>Sign Up</li>
-        </ul>
-      </nav>
+     
 
       {/* Hero Section */}
       <div className="hero">
